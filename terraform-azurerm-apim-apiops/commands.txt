@@ -1,0 +1,5 @@
+cd D:\MyCode\apim\terraform-azurerm-apim-apiops
+
+az login
+az account set --subscription 87942bd2-87e0-47f3-a71f-f6817369c2ec
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass

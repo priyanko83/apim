@@ -6,7 +6,7 @@
 variable "artifacts_path" {
   description = "(Required) Artifacts folder path. Path should be relative to your root module path."
   type        = string
-  default     = "artifacts"
+  default     = "examples/artifacts"
 }
 
 variable "allow_api_without_path" {
@@ -19,11 +19,13 @@ variable "allow_api_without_path" {
 variable "api_management_name" {
   description = "(Required) The name of the API Management Service."
   type        = string
+  default     = "pm-apim-cp"
 }
 
 variable "api_management_resource_group_name" {
   description = "(Required) The name of the Resource Group in which the API Management Service exists."
   type        = string
+  default     = "Multi-purpose-API"  
 }
 
 # Application Insights

@@ -14,4 +14,23 @@ terraform {
       version = ">= 2.36" # Not tested on provider version below 2.36, but will probably work.
     }
   }
+
+# Terraform State Storage to Azure Storage Container
+  backend "azurerm" {
+    resource_group_name   = "terraform-rg"
+    storage_account_name  = "terraformstatepoc2"
+    container_name        = "apiops"
+    key                   = "devapiops.terraform.tfstate"
+  }  
+}
+
+
+# Terraform Provider Block for AzureRM
+provider "azurerm" {
+  features {
+    # Updated as part of June2023 to delete "ContainerInsights Resources" when deleting the Resource Group
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
 }
